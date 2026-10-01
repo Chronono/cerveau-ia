@@ -7,7 +7,7 @@ Cette page résume les neuf fiches et mène à chacune ; toutes les sources sont
 
 **Quatre mots.** Une **règle** : une consigne que l'IA lit à chaque session, avant tout ; les règles tiennent dans un fichier, AGENTS.md. La **mémoire** : les notes du projet, le but, les sources, les hypothèses, les décisions, le vocabulaire, que l'IA lit quand la tâche en a besoin, en partant d'un sommaire. Un **skill** : une procédure écrite une fois, par exemple « préparer un PowerPoint », avec le plan que l'équipe veut, son style et ce qu'on vérifie avant d'envoyer ; l'IA la lit seulement quand la tâche l'exige. Un **agent** : une IA autorisée à modifier vos fichiers et à lancer des commandes, dont git, sous réserve des règles écrites juste au-dessus ; un chatbot ne le peut pas.
 
-**Les mots de git.** Git : l'outil qui garde l'historique de vos fichiers ; GitHub : le site qui héberge le dépôt partagé. Dépôt : le dossier partagé et son historique. Cloner : en faire une copie sur son poste. Commit : l'enregistrement d'un changement, avec son auteur et une phrase qui le décrit. Push : envoyer ses commits aux autres. Pull : récupérer ceux des autres. Conflit : deux personnes ont modifié les mêmes lignes, et git ne sait pas laquelle garder.
+**Les mots de git.** **Git** : l'outil qui garde l'historique de vos fichiers ; **GitHub** : le site qui héberge le dépôt partagé. **Dépôt** : le dossier partagé et son historique. **Cloner** : en faire une copie sur son poste. **Commit** : l'enregistrement d'un changement, avec son auteur et une phrase qui le décrit. **Push** : envoyer ses commits aux autres. **Pull** : récupérer ceux des autres. **Conflit** : deux personnes ont modifié les mêmes lignes, et git ne sait pas laquelle garder.
 
 ## En six lignes
 

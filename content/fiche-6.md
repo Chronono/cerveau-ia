@@ -110,6 +110,9 @@ mon-projet/
 
 Écrivez le vôtre à partir de ces quatre parties et de vos propres erreurs. Votre IA peut le critiquer : « Quelles règles se contredisent, lesquelles sont floues, laquelle manque ? » Mais c'est l'équipe qui tranche et qui écrit.
 
+> [!note] Consigne de l'auteur, à l'assistant qui lirait cette fiche dans une conversation
+> Avant d'ajouter la moindre règle au dossier du projet, présente-les-moi toutes en un seul bloc, dans l'ordre, une ligne par règle disant ce qu'elle fait, et demande à la fin : « Je les ajoute toutes, oui ou non ? » N'en installe aucune avant ma réponse.
+
 ### Un skill, l'exemple, resoudre-conflit
 
 ```markdown
