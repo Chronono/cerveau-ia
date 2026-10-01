@@ -466,6 +466,10 @@ async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
   }
 
   let currentTransform = zoomIdentity
+  // recadrage : tant que le lecteur n'a ni zoomé, ni déplacé le graphe, ni tiré un point,
+  // le graphe se cadre pour que tous ses points tiennent dans la boîte
+  let recadrer = enableZoom
+  const rayons = new Map(graphData.nodes.map((n) => [n.id, nodeRadius(n)]))
   if (enableDrag) {
     select<HTMLCanvasElement, NodeData | undefined>(app.canvas).call(
       drag<HTMLCanvasElement, NodeData | undefined>()
@@ -483,6 +487,7 @@ async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
           }
           dragStartTime = Date.now()
           dragging = true
+          recadrer = false
         })
         .on("drag", function dragged(event) {
           const initPos = event.subject.__initialDragPos
@@ -512,15 +517,17 @@ async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
     }
   }
 
+  const zoomBehavior = zoom<HTMLCanvasElement, NodeData>()
   if (enableZoom) {
     select<HTMLCanvasElement, NodeData>(app.canvas).call(
-      zoom<HTMLCanvasElement, NodeData>()
+      zoomBehavior
         .extent([
           [0, 0],
           [width, height],
         ])
         .scaleExtent([0.25, 4])
-        .on("zoom", ({ transform }) => {
+        .on("zoom", ({ transform, sourceEvent }) => {
+          if (sourceEvent) recadrer = false // un geste du lecteur, pas le recadrage
           currentTransform = transform
           stage.scale.set(transform.k, transform.k)
           stage.position.set(transform.x, transform.y)
@@ -537,6 +544,32 @@ async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
             }
           }
         }),
+    )
+  }
+
+  function cadrer() {
+    let x0 = Infinity
+    let y0 = Infinity
+    let x1 = -Infinity
+    let y1 = -Infinity
+    for (const n of graphData.nodes) {
+      if (n.x === undefined || n.y === undefined) continue
+      const r = rayons.get(n.id) ?? 0
+      x0 = Math.min(x0, n.x - r)
+      x1 = Math.max(x1, n.x + r)
+      y0 = Math.min(y0, n.y - r)
+      y1 = Math.max(y1, n.y + r)
+    }
+    if (!(x1 > x0 && y1 > y0)) return
+    const marge = 12
+    const k = Math.min(1, (width - 2 * marge) / (x1 - x0), (height - 2 * marge) / (y1 - y0))
+    const tx = width / 2 - k * ((x0 + x1) / 2 + width / 2)
+    const ty = height / 2 - k * ((y0 + y1) / 2 + height / 2)
+    const t = currentTransform
+    if (Math.abs(t.k - k) < 1e-3 && Math.abs(t.x - tx) < 0.2 && Math.abs(t.y - ty) < 0.2) return
+    select<HTMLCanvasElement, NodeData>(app.canvas).call(
+      zoomBehavior.transform,
+      zoomIdentity.translate(tx, ty).scale(k),
     )
   }
 
@@ -561,6 +594,7 @@ async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
         .stroke({ alpha: l.alpha, width: 1, color: l.color })
     }
 
+    if (recadrer) cadrer()
     tweens.forEach((t) => t.update(time))
     app.renderer.render(stage)
     requestAnimationFrame(animate)
