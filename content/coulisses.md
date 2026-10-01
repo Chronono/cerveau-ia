@@ -2,7 +2,7 @@
 title: "Construire avec l'IA : les coulisses d'une fiche"
 ---
 
-> Compagnon de la fiche [[index|« Donner un cerveau à l'IA de votre équipe »]] · écrite le 30/09/26 · mise à jour le 01/10/26 avec la v5, puis avec son découpage en [[index|neuf fiches et un résumé]]
+> Compagnon de la fiche [[index|« Donner un cerveau à l'IA de votre équipe »]] · écrite le 30/09/26 · mise à jour le 01/10/26 avec la v5, puis avec son découpage en [[index|neuf fiches et un résumé]] et sa mise en ligne
 
 Cette fiche raconte comment l'autre a été construite, entre moi et mon IA. Je ne recopie pas mes demandes : je montre les allers-retours, ce que l'IA a fait, ce qu'elle a raté, ce que j'ai raté aussi, et comment tout a été vérifié. C'est ce que j'espère être une bonne pratique quand on construit quelque chose avec l'IA. Ce n'est pas la seule, et elle se discute.
 
@@ -189,7 +189,18 @@ Restait la longueur. Le plan annonçait des fiches à un peu plus de 60 % de la 
 > [!tip] La pratique
 > Une règle écrite une fois sert les fois suivantes : ici, je n'ai pas eu à demander le plan. Quand vous ne comprenez pas une proposition, dites-le, sinon elle s'appliquera telle quelle. Faites mesurer ce que l'IA estime, une longueur, un temps, un gain : une estimation n'est pas une mesure. Un résumé « sans perte » se prouve point par point, par une IA qui ne l'a pas écrit. Et ce qu'elle dit avoir lu se vérifie aussi.
 
-## 11. Ce que j'en retiens
+## 11. La mise en ligne : un lien plutôt qu'un fichier
+
+Restait à faire lire les fiches. J'ai demandé comment les envoyer aux étudiants pour qu'ils les lisent confortablement : devaient-ils passer par un lecteur de Markdown ? Existait-il un outil en ligne gratuit, sans inscription ?
+
+L'IA a d'abord expliqué l'obstacle. Mes fiches sont écrites dans le Markdown propre à Obsidian, avec ses liens, ses encadrés repliables et ses commentaires cachés, et les lecteurs en ligne ne le comprennent pas : les liens s'afficheraient en texte brut, et le commentaire de brouillon dans l'encadré de mon frère deviendrait visible. Puis elle a proposé quatre façons, chacune avec sa contrepartie : un petit site gratuit, mais public ; un seul fichier HTML, à renvoyer à chaque correction ; le dossier des fiches, à ouvrir dans Obsidian, qu'il faut installer avant de lire ; des PDF, sans liens d'une fiche à l'autre. Elle recommandait le site, si un site public ne me gênait pas, et listait ce qu'il fallait régler avant tout envoi : l'encadré de mon frère, encore brouillon ; le lien vers la v5, qui ferait doublon ; la vérification point par point, qui tournait encore. J'ai choisi le site : public, ça me va.
+
+Elle avait annoncé une mise en place avec moi ; elle l'a faite seule, en un quart d'heure, avec mon compte GitHub, déjà connecté sur mon ordinateur. Un script copie les fiches de mon vault vers le site et le met à jour en deux minutes : je corrige toujours dans Obsidian, jamais sur le site. Avant de publier, elle a retiré ce qui n'avait pas à sortir, le commentaire de brouillon et le lien vers la v5 ; et, le dépôt étant public, elle a signé les commits de l'adresse que GitHub fournit pour ne pas montrer mon mail. Puis elle a ouvert chaque page en ligne et suivi chaque lien entre les fiches jusqu'au titre visé. Avant les étudiants, j'envoie le site à mon frère, pour qu'il complète son témoignage et me dise ce qu'il pense des fiches.
+
+> [!tip] La pratique
+> Demandez les options et leurs contreparties avant de choisir, et ce qu'il faut régler avant d'envoyer. Ce qui sort en public se relit : un commentaire caché, un lien vers une note privée, une adresse mail. Un agent agit avec vos accès, ici mon compte GitHub : dites-lui ce qu'il a le droit de publier. Et vérifiez le résultat là où le lecteur le verra.
+
+## 12. Ce que j'en retiens
 
 | Version | Longueur | Ce qui a changé |
 |---|---|---|
@@ -211,7 +222,7 @@ Restait la longueur. Le plan annonçait des fiches à un peu plus de 60 % de la 
 
 **Ce que j'aurais pu mieux faire** : activer le mode plan et retoucher son plan avant qu'elle écrive ; répondre à ses questions, puisqu'elle m'en a laissé à chaque livraison ; dire ce que j'avais en tête, les études, au lieu de le croire dit.
 
-La pratique, en douze points :
+La pratique, en treize points :
 1. **Donnez l'intention, le contexte et vos contraintes**, pas la solution (§ 1).
 2. **Passez en mode plan, et retouchez son plan** avant qu'elle écrive : la puissance est dans vos retouches (§ 1, § 3, § 7, § 8 et § 10).
 3. **Laissez-la lire ce qui existe** avant d'écrire (§ 1).
@@ -224,6 +235,7 @@ La pratique, en douze points :
 10. **Avant de couper, demandez le relevé et le plan des coupes**, avec l'endroit où chaque idée reste (§ 8).
 11. **Avant qu'elle écrive, demandez son avis et ses objections**, et confrontez votre travail au regard de quelqu'un du métier (§ 9).
 12. **Faites mesurer ce que l'IA estime**, et prouvez un résumé point par point, par une IA qui ne l'a pas écrit (§ 10).
+13. **Avant de publier, relisez ce qui sort**, et vérifiez le résultat là où le lecteur le verra (§ 11).
 
 **Et pour votre projet.** À plusieurs, les retours ne vont pas dans la mémoire d'un outil : les règles vont dans AGENTS.md, par le responsable des règles, et le reste dans une note du socle. Pour du code, vérifier, c'est un test qui tourne ou une datasheet ouverte ; le lecteur, c'est l'utilisateur.
 
