@@ -1,5 +1,6 @@
 ---
 title: "Donner un cerveau à l'IA de votre équipe, l'essentiel"
+graphe: ["fiche-1", "fiche-2", "fiche-3", "fiche-4", "fiche-5", "fiche-6", "fiche-7", "fiche-8", "fiche-9", "coulisses"]
 ---
 
 > Fiche d'introduction pour toute équipe qui travaille avec une IA · écrite le 30/09/26 · ici, le résumé des neuf fiches découpées le 01/10/26 d'après la version complète · comment la version complète a été construite : [[coulisses|les coulisses]]
@@ -20,14 +21,14 @@ Cette page résume les neuf fiches et mène à chacune ; toutes les sources sont
 - Un modèle de langage oublie tout d'une conversation à l'autre : il ne voit que son contexte, une ressource finie, à remplir de peu d'informations, mais les bonnes.
 - Le socle a trois couches : les **règles** (AGENTS.md, lues à chaque session), la **mémoire** (les notes du projet, lues à la demande en partant d'`index.md`), les **skills** (des procédures lues quand la tâche l'exige). Pour y travailler, il faut un **agent**, qui modifie les fichiers et lance git.
 - Agnostique, à une condition : un seul fichier de règles. AGENTS.md les contient toutes ; pour Claude Code, un CLAUDE.md d'une ligne, `@AGENTS.md`.
-- Le gain dépend de ce que vous écrivez : sur des tâches de code, un fichier de règles écrit par l'équipe fait mieux qu'un fichier généré par l'IA [5].
+- Le gain dépend de ce que vous écrivez : sur des tâches de code, un fichier de règles écrit par l'équipe fait mieux qu'un fichier généré par l'IA [\[5\]](source-05).
 
 **[[fiche-2|2. Le cerveau, vu dans Obsidian]]**
 - Des fichiers texte sur votre disque : vous lisez exactement ce que l'IA lit et ce que git versionne. Les liens relient les notes, les rétroliens montrent qui cite qui, le graphe montre les notes isolées, que l'IA risque de ne pas trouver.
 - Ce que vous ne voyez pas, vous ne le contrôlez pas. Obsidian n'est pas obligatoire : n'importe quel éditeur convient. Un Drive peut remplacer GitHub, mais la feuille de route et le rituel reposent sur git, et un dépôt git ne se met jamais dans un dossier synchronisé par un cloud.
 
 **[[fiche-3|3. Ayez peur]]**
-- L'IA aide vraiment, mais ne prévient pas quand elle sort de son terrain : sur une tâche piège, 84,5 % de bonnes réponses sans elle, 60 à 71 % avec, et des réponses fausses mieux rédigées [1]. Elle amplifie ce qui existe déjà [3].
+- L'IA aide vraiment, mais ne prévient pas quand elle sort de son terrain : sur une tâche piège, 84,5 % de bonnes réponses sans elle, 60 à 71 % avec, et des réponses fausses mieux rédigées [\[1\]](source-01). Elle amplifie ce qui existe déjà [\[3\]](source-03).
 - La méthode, pour toute tâche qui compte : le contexte, vos hypothèses, les siennes, vos réponses, la décision écrite, et alors seulement l'action.
 - Le plus grand danger, c'est vous : l'ingénieur risque de perdre ce qu'il sait ; qui apprend, de ne jamais l'acquérir. Déléguez la tactique, gardez la stratégie, et comprenez les principes : savoir écrire chaque ligne n'est pas le but.
 
@@ -50,7 +51,7 @@ Sept étapes, chacune avec son signe de réussite : s'équiper ; créer le dép�
 - Une règle écrite reste un conseil : d'où le hook, quand l'outil le permet, et les interdits bloqués dans l'outil. Le commit porte votre nom : votre IA, votre responsabilité.
 
 **[[fiche-8|8. Améliorer, niveau par niveau]]**
-- Six niveaux : fonctionnel, cerveau nourri, réflexion écrite, skills, automatismes, serveur. Jugez sur ces critères, pas au ressenti : 16 développeurs expérimentés croyaient avoir gagné 20 % de temps avec l'IA, et en avaient mis 19 % de plus, avec les outils de début 2025 ; les mesures de fin 2025 penchent vers une accélération, sans effet établi [4].
+- Six niveaux : fonctionnel, cerveau nourri, réflexion écrite, skills, automatismes, serveur. Jugez sur ces critères, pas au ressenti : 16 développeurs expérimentés croyaient avoir gagné 20 % de temps avec l'IA, et en avaient mis 19 % de plus, avec les outils de début 2025 ; les mesures de fin 2025 penchent vers une accélération, sans effet établi [\[4\]](source-04).
 - Chaque erreur corrige le socle, et AGENTS.md reste court. La veille est indispensable : étudiez avant d'employer.
 - Plus tard, un serveur qui veille : il relit chaque commit, soumet les conflits au vote de l'équipe, et peut faire le point du matin.
 
@@ -62,7 +63,7 @@ Commencer la lecture : [[fiche-1|1. Un chatbot n'est pas un collègue]] →
 ## Toutes les sources
 
 > [!note]- Les 21 sources, par famille (cliquez pour déplier)
-> Dans les fiches, un numéro entre crochets, comme [3], renvoie à la source de ce numéro ; chaque fiche reprend en bas celles qu'elle cite. Pages sans date consultées le 30/09/26.
+> Dans les fiches, un numéro entre crochets, comme [\[3\]](source-03), renvoie à la source de ce numéro ; chaque fiche reprend en bas celles qu'elle cite. Pages sans date consultées le 30/09/26.
 >
 > **Ce que montrent les études** : les exemples des fiches.
 >

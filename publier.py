@@ -2,9 +2,11 @@
 """Copie les fiches « Cerveau IA » du vault dans content/, au format du site.
 
     python publier.py             copie seulement (pour regarder le diff)
-    python publier.py --pousser   copie, commit et push : le site se met à jour en deux minutes
+    python publier.py --pousser   copie, commit et push : le site se met à jour en quelques minutes
 
 Le vault reste la seule source : on corrige les fiches dans Obsidian, jamais dans content/.
+Chaque source de la liste de L'essentiel devient une page (source-01 …), et chaque [n] des fiches
+un lien vers elle. Le graphe ne trace que L'essentiel → fiches et fiches → sources (clé « graphe »).
 """
 import os, re, subprocess, sys
 
@@ -26,6 +28,20 @@ for nom in os.listdir(os.path.join(FICHES, "Cerveau IA")):
 
 LIEN = re.compile(r"(!?)\[\[([^\[\]|#\\]+)(#[^\[\]|\\]+)?((?:\\?\|)[^\[\]]+)?\]\]")
 CODE = re.compile(r"(```[\s\S]*?```|`[^`\n]*`)")
+CITATION = re.compile(r"\\?\[(\d{1,2})\](?!\()")
+TITRES, CITES = {}, {}  # page -> titre ; page -> numéros de sources cités
+
+
+def hors_code(texte, fonction):
+    """Applique fonction au texte hors des blocs et des bouts de code."""
+    morceaux = CODE.split(texte)
+    for i in range(0, len(morceaux), 2):  # les indices impairs sont du code
+        morceaux[i] = fonction(morceaux[i])
+    return "".join(morceaux)
+
+
+def source(n):
+    return f"source-{n:02d}"
 
 
 def relier(texte, page, erreurs):
@@ -46,10 +62,27 @@ def relier(texte, page, erreurs):
         erreurs.append(f"{page} : lien vers une note non publiée {m.group(0)}")
         return m.group(0)
 
-    morceaux = CODE.split(texte)
-    for i in range(0, len(morceaux), 2):  # les indices impairs sont du code
-        morceaux[i] = LIEN.sub(un_lien, morceaux[i])
-    return "".join(morceaux)
+    return hors_code(texte, lambda t: LIEN.sub(un_lien, t))
+
+
+def citer(texte, page):
+    """Chaque [n] (1 à 21) devient un lien vers la page de la source n ; on note les numéros cités."""
+    cites = CITES.setdefault(page, set())
+
+    def une(m):
+        n = int(m.group(1))
+        if not 1 <= n <= 21:
+            return m.group(0)
+        cites.add(n)
+        return f"[\\[{n}\\]]({source(n)})"
+
+    return hors_code(texte, lambda t: CITATION.sub(une, t))
+
+
+def entete(titre, graphe):
+    titre_yaml = titre.replace("\\", "\\\\").replace('"', '\\"')
+    liste = ", ".join(f'"{g}"' for g in graphe)
+    return f'---\ntitle: "{titre_yaml}"\ngraphe: [{liste}]\n---\n\n'
 
 
 def convertir(chemin, page, erreurs):
@@ -59,36 +92,84 @@ def convertir(chemin, page, erreurs):
     if not m:
         erreurs.append(f"{page} : pas de titre « # »")
         return None
-    titre = m.group(1).strip()
+    TITRES[page] = m.group(1).strip()
     t = t[:m.start()] + t[m.end():]  # Quartz affiche le titre lui-même
     t = re.sub(r"^(?:> ?)*%%[\s\S]*?%%[ \t]*\n", "", t, flags=re.M)  # commentaires seuls sur leur ligne
     t = re.sub(r"%%[\s\S]*?%%", "", t)  # commentaires dans le texte
     t = relier(t, page, erreurs)
-    titre_yaml = titre.replace("\\", "\\\\").replace('"', '\\"')
-    return f'---\ntitle: "{titre_yaml}"\n---\n\n' + t.lstrip("\n")
+    if page == "index" or page.startswith("fiche-"):
+        t = citer(t, page)
+    return t.lstrip("\n")
+
+
+def lire_sources(index, erreurs):
+    """La liste de L'essentiel, déjà convertie : numéro -> (famille, titre en gras, reste de la ligne)."""
+    _, _, liste = index.partition("## Toutes les sources")
+    sources, famille = {}, ""
+    for ligne in liste.splitlines():
+        f = re.match(r"> \*\*(.+?)\*\* : ", ligne)
+        if f:
+            famille = f.group(1)
+        s = re.match(r"> (\d{1,2})\. \*\*(.+?)\*\* ?(.*)$", ligne)
+        if s:
+            sources[int(s.group(1))] = (famille, s.group(2), s.group(3))
+    if sorted(sources) != list(range(1, 22)):
+        erreurs.append(f"liste des sources de L'essentiel incomplète : {sorted(sources)}")
+    return sources
+
+
+def page_source(n, famille, gras, reste):
+    fiches = sorted((p for p, c in CITES.items() if n in c and p != "index"), key=lambda p: int(p[6:]))
+    liens = [f"[[{p}|{TITRES[p]}]]" for p in fiches]
+    dans = ", ".join(liens[:-1]) + " et " + liens[-1] if len(liens) > 1 else "".join(liens)
+    if n in CITES.get("index", ()):
+        dans = (dans + ", ainsi que " if dans else "") + "[[index|L'essentiel]]"
+    return (entete(f"[{n}] {gras.rstrip('.')}", [])
+            + f"> Source [{n}] des fiches « Donner un cerveau à l'IA de votre équipe » · {famille}\n\n"
+            + f"**{gras}** {reste}\n\n"
+            + (f"**Citée dans** : {dans}.\n\n" if dans else "Citée dans aucune fiche pour l'instant.\n\n")
+            + "Toutes les sources, par famille : [[index#Toutes les sources|L'essentiel]].\n")
 
 
 def main():
-    erreurs, ecrits = [], set()
+    erreurs, ecrits, textes = [], set(), {}
     pages = {page for _, page in PAGES.values()}
     if len(pages) != len(PAGES) or "index" not in pages:
         sys.exit(f"pages en double ou L'essentiel absent : {sorted(pages)}")
     os.makedirs(CONTENU, exist_ok=True)
     for nom, (chemin, page) in sorted(PAGES.items(), key=lambda x: x[1][1]):
-        sortie = convertir(chemin, page, erreurs)
-        if sortie is None:
-            continue
+        t = convertir(chemin, page, erreurs)
+        if t is not None:
+            textes[page] = t
+            print(f"{page:10} <- {nom}")
+    fiches = sorted((p for p in textes if p.startswith("fiche-")), key=lambda p: int(p[6:]))
+    sources = lire_sources(textes.get("index", ""), erreurs)
+    for page, t in textes.items():
+        if page == "index":
+            graphe = fiches + ["coulisses"]
+        elif page.startswith("fiche-"):
+            graphe = [source(n) for n in sorted(CITES.get(page, ()))]
+        else:
+            graphe = []
+        manquantes = sorted(CITES.get(page, set()) - set(sources))
+        if manquantes:
+            erreurs.append(f"{page} : sources citées absentes de la liste de L'essentiel {manquantes}")
+        textes[page] = entete(TITRES[page], graphe) + t
+    for n, (famille, gras, reste) in sources.items():
+        textes[source(n)] = page_source(n, famille, gras, reste)
+    print(f"{len(sources)} pages de sources ; citées par fiche : "
+          + " ; ".join(f"{p[6:]} → {sorted(CITES.get(p, ()))}" for p in fiches))
+    for page, t in textes.items():
         with open(os.path.join(CONTENU, page + ".md"), "w", encoding="utf-8", newline="\n") as f:
-            f.write(sortie)
+            f.write(t)
         ecrits.add(page + ".md")
-        print(f"{page:10} <- {nom}")
     for vieux in os.listdir(CONTENU):  # une fiche renommée ou retirée du vault quitte le site
         if vieux.endswith(".md") and vieux not in ecrits:
             os.remove(os.path.join(CONTENU, vieux))
             print(f"retiré : {vieux}")
     if erreurs:
         print("\n".join(erreurs))
-        sys.exit("rien n'est poussé : corriger d'abord ces liens dans le vault")
+        sys.exit("rien n'est poussé : corriger d'abord ces points dans le vault")
     if "--pousser" in sys.argv:
         git = lambda *a: subprocess.run(["git", "-C", ICI, *a], check=True)
         git("add", "-A", "content")
@@ -97,7 +178,7 @@ def main():
             return
         git("commit", "-q", "-m", "Fiches mises à jour depuis le vault")
         git("push", "-q")
-        print("poussé : https://chronono.github.io/cerveau-ia/ dans deux minutes environ")
+        print("poussé : https://chronono.github.io/cerveau-ia/ dans quelques minutes")
 
 
 if __name__ == "__main__":

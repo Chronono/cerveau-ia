@@ -35,10 +35,12 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.Explorer(),
+    Component.Explorer({
+      filterFn: (node) => node.slugSegment !== "tags" && !node.slugSegment.startsWith("source-"),
+    }),
   ],
   right: [
-    Component.Graph(),
+    Component.Graph({ localGraph: { depth: 2 } }),
     Component.DesktopOnly(Component.TableOfContents()),
     Component.Backlinks(),
   ],

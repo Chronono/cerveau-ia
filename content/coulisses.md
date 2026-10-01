@@ -1,5 +1,6 @@
 ---
 title: "Construire avec l'IA : les coulisses d'une fiche"
+graphe: []
 ---
 
 > Compagnon de la fiche [[index|« Donner un cerveau à l'IA de votre équipe »]] · écrite le 30/09/26 · mise à jour le 01/10/26 avec la v5, puis avec son découpage en [[index|neuf fiches et un résumé]] et sa mise en ligne

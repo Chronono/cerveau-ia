@@ -42,6 +42,9 @@ export const CrawlLinks: QuartzTransformerPlugin<Partial<Options>> = (userOpts) 
           return (tree: Root, file) => {
             const curSlug = simplifySlug(file.data.slug!)
             const outgoing: Set<SimpleSlug> = new Set()
+            // liens tracés dans le graphe : tous, sauf si la page en donne la liste (frontmatter « graphe »)
+            const graphe = file.data.frontmatter?.graphe as string[] | undefined
+            const graphOut: Set<SimpleSlug> = new Set()
 
             const transformOptions: TransformOptions = {
               strategy: opts.markdownLinkResolution,
@@ -122,6 +125,7 @@ export const CrawlLinks: QuartzTransformerPlugin<Partial<Options>> = (userOpts) 
                   const full = decodeURIComponent(stripSlashes(destCanonical, true)) as FullSlug
                   const simple = simplifySlug(full)
                   outgoing.add(simple)
+                  if (!Array.isArray(graphe) || graphe.includes(simple)) graphOut.add(simple)
                   node.properties["data-slug"] = full
                 }
 
@@ -160,6 +164,7 @@ export const CrawlLinks: QuartzTransformerPlugin<Partial<Options>> = (userOpts) 
             })
 
             file.data.links = [...outgoing]
+            file.data.graphLinks = [...graphOut]
           }
         },
       ]
@@ -170,5 +175,6 @@ export const CrawlLinks: QuartzTransformerPlugin<Partial<Options>> = (userOpts) 
 declare module "vfile" {
   interface DataMap {
     links: SimpleSlug[]
+    graphLinks: SimpleSlug[]
   }
 }
