@@ -3,8 +3,6 @@ title: "5. La feuille de route"
 graphe: ["source-20"]
 ---
 
-> Donner un cerveau à l'IA de votre équipe · fiche 5 sur 9 · version découpée du 01/10/26, d'après la version complète
-
 ↑ [[index|L'essentiel]] · ← [[fiche-4|4. Nourrir, puis réfléchir]] · [[fiche-6|6. Le socle, par criticité]] →
 
 Voici l'ordre ; le détail est dans les fiches [[fiche-4|4]], [[fiche-6|6]] et [[fiche-7|7]], celui du dépôt à l'étape 2. Chaque étape a son signe de réussite : ne passez à la suivante qu'après l'avoir vu.

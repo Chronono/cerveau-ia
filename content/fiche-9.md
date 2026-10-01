@@ -3,17 +3,17 @@ title: "9. Dangers et parades"
 graphe: ["source-07", "source-08", "source-10", "source-11", "source-12", "source-13"]
 ---
 
-> Donner un cerveau à l'IA de votre équipe · fiche 9 sur 9 · version découpée du 01/10/26, d'après la version complète
-
 ↑ [[index|L'essentiel]] · ← [[fiche-8|8. Améliorer, niveau par niveau]]
+
+Le plus gros danger reste la régression : perdre la main sur ce que vous savez faire, ou ne jamais l'acquérir ([[fiche-3#Le plus grand danger, vous|fiche 3]]). Ce cerveau est là pour vous épargner ce qui vous prend du temps alors que vous le maîtrisez déjà, jamais pour vous dispenser de comprendre. Gardez la maîtrise, sinon c'est le mur. Cinq dangers, à chacun son fait sourcé et sa parade :
 
 | Danger | Le fait | Parade |
 |---|---|---|
 | Invention avec assurance | Des avocats ont cité des décisions de justice inventées par ChatGPT, qui les disait réelles, et les ont défendues une fois alertés : sanctionnés [\[10\]](source-10) | Tout fait porte sa source, vérifiée dans la source, jamais en redemandant à l'IA ([[fiche-6#AGENTS.md, l'exemple\|AGENTS.md]]) |
 | Secrets poussés | Selon GitGuardian (qui vend un détecteur de secrets), les commits publics assistés par Claude Code contenaient un secret deux fois plus souvent que la moyenne, 3,2 % contre 1,5 % (corrélation) [\[11\]](source-11) | `.gitignore` en premier, contrôle de secrets jamais contourné ([[fiche-6#Critique\|fiche 6]]) |
 | Agent qui détruit | Selon son utilisateur, un agent a supprimé des données de production malgré une consigne de ne rien modifier (récupérées ensuite) [\[12\]](source-12) | Aucun accès à la production, sauvegardes, interdits bloqués, accord humain avant toute destruction ([[fiche-7#Réglages par outil\|fiche 7]]) |
-| Compétences perdues | Les compétences s'usent quand on ne s'en sert plus [\[7\]](source-07) ; avec l'IA, sans chercher à comprendre, on apprend moins [\[8\]](source-08) ([[fiche-3#Le plus grand danger, vous\|fiche 3]]) | Tracer la ligne en mode plan, le questionnaire ([[fiche-4#Le questionnaire\|fiche 4]]), le point sur ce qui a changé ([[fiche-7#Ce qui a changé\|fiche 7]]), la veille ([[fiche-8#La veille\|fiche 8]]) |
 | Consignes cachées | Dans une démonstration, des caractères invisibles dans un fichier de règles ont fait ajouter un script malveillant, sans que l'IA le dise [\[13\]](source-13) | Relire règles et skills comme du code, avec un outil qui voit l'invisible ; droits minimaux |
+| Compétences perdues | Les compétences s'usent quand on ne s'en sert plus [\[7\]](source-07) ; avec l'IA, sans chercher à comprendre, on apprend moins [\[8\]](source-08) ([[fiche-3#Le plus grand danger, vous\|fiche 3]]) | Tracer la ligne en mode plan, le questionnaire ([[fiche-4#Le questionnaire\|fiche 4]]), le point sur ce qui a changé ([[fiche-7#Ce qui a changé\|fiche 7]]), la veille ([[fiche-8#La veille\|fiche 8]]) |
 
 ## Sources de cette fiche
 

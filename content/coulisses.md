@@ -3,7 +3,7 @@ title: "Construire avec l'IA : les coulisses d'une fiche"
 graphe: []
 ---
 
-> Compagnon de la fiche [[index|« Donner un cerveau à l'IA de votre équipe »]] · écrite le 30/09/26 · mise à jour le 01/10/26 avec la v5, puis avec son découpage en [[index|neuf fiches et un résumé]] et sa mise en ligne
+> Compagnon de la fiche [[index|« Donner un cerveau à l'IA de votre équipe »]] · écrite le 30/09/26 · mise à jour le 01/10/26 avec la v5, puis avec son découpage en [[index|neuf fiches et un résumé]] et sa mise en ligne, puis avec la relecture du résumé
 
 Cette fiche raconte comment l'autre a été construite, entre moi et mon IA. Je ne recopie pas mes demandes : je montre les allers-retours, ce que l'IA a fait, ce qu'elle a raté, ce que j'ai raté aussi, et comment tout a été vérifié. C'est ce que j'espère être une bonne pratique quand on construit quelque chose avec l'IA. Ce n'est pas la seule, et elle se discute.
 
@@ -201,7 +201,16 @@ Elle avait annoncé une mise en place avec moi ; elle l'a faite seule, en un qua
 > [!tip] La pratique
 > Demandez les options et leurs contreparties avant de choisir, et ce qu'il faut régler avant d'envoyer. Ce qui sort en public se relit : un commentaire caché, un lien vers une note privée, une adresse mail. Un agent agit avec vos accès, ici mon compte GitHub : dites-lui ce qu'il a le droit de publier. Et vérifiez le résultat là où le lecteur le verra.
 
-## 12. Ce que j'en retiens
+## 12. La relecture à voix haute : le résumé mis à l'épreuve
+
+Le soir du 01/10, j'ai relu L'essentiel en dictant mes retours au fil de la lecture, avec une consigne : ne rien modifier, revenir vers moi, et retravailler le tout ensemble. Mes retours étaient ceux d'un lecteur qui ne connaît ni l'IA ni git : la date d'écriture en tête n'intéresse personne ; « agnostique », par rapport à quoi ? ; « répéter un conflit », « la vraie question », « l'étiquette vu », « une tâche piège » ne se comprennent pas sans explication ; et il manquait, avant tout, une définition de la mémoire, d'un skill, d'un agent et d'une règle. J'ai aussi demandé de nommer git là où il agit, d'expliquer ce qu'est une veille technologique avec un lien pour la mettre en place, et de dire partout le plus gros danger, la régression.
+
+L'IA a lu L'essentiel et les neuf fiches, puis a rouvert les trois sources que mes retours touchaient avant de proposer une ligne. Deux ont changé le texte. L'étude d'ETH Zurich sur les fichiers de règles disait moins que la fiche : aucun fichier n'améliore nettement la réussite de l'agent ; celui des développeurs fait un peu mieux que celui de l'IA, et ce qui marche, ce sont les consignes précises, pas une description du projet. Et la « tâche piège » de Harvard et du BCG a enfin été décrite : un cas d'affaires où la bonne réponse se cachait dans des entretiens, que l'IA lisait mal. Puis elle m'a soumis, point par point, les formules prêtes et quatre choix à trancher. J'ai renvoyé quatre points : un exemple de skill trop vague, un agent à relier aux règles, « chaque erreur corrige le socle » sans son mécanisme, et une phrase sur l'étude qui résumait l'article au lieu de le mettre dans le contexte du point qu'il prouve. Deuxième passe, puis mon accord : elle a écrit, vérifié chaque lien par script, republié le site, et écrit ce paragraphe. Pendant ce temps, dans deux autres conversations, je relisais de la même façon les fiches 1 et 2 : l'IA de celle-ci a vu leurs changements arriver dans les mêmes fichiers, les a gardés, a prévenu l'autre conversation encore ouverte, et n'a réécrit que ses passages.
+
+> [!tip] La pratique
+> Relisez à la place du lecteur le moins armé, à voix haute : chaque mot non défini, chaque étape nommée sans être expliquée, chaque exemple résumé hors du point qu'il prouve est un trou. Demandez les formules avant qu'elles entrent dans le texte, et renvoyez ce qui ne se comprend pas : le texte s'écrit en deux passes, pas en une. Quand l'IA touche à un fait, qu'elle rouvre la source : ici, deux des trois sources rouvertes ont changé le texte. Et deux IA sur les mêmes fichiers, c'est le cas de la fiche 7 : chacune relit juste avant d'écrire, et ne remplace que ses passages.
+
+## 13. Ce que j'en retiens
 
 | Version | Longueur | Ce qui a changé |
 |---|---|---|
@@ -212,6 +221,7 @@ Elle avait annoncé une mise en place avec moi ; elle l'a faite seule, en un qua
 | v4, après les coupes | environ 8 450 mots | Trente redites coupées, une maison par idée, trois défauts corrigés |
 | v5 | environ 11 000 mots | Le plus grand danger : vous (tactique et stratégie, l'avis d'un ingénieur, à compléter par lui), le questionnaire avant le push, le point sur ce qui a changé, la veille, trois sources de plus |
 | Découpage | neuf fiches, 97 % de la v5 ; L'essentiel, environ 1 100 mots plus les sources | Un chapitre par fiche, des liens pour passer de l'une à l'autre, les sources au pied de chaque fiche et toutes dans L'essentiel |
+| L'essentiel relu | L'essentiel, environ 2100 mots plus les sources | Les mots définis avant tout, git nommé là où il agit, la feuille de route et le rituel dépliés, la régression dite partout, deux études relues dans leur source, une 22e source pour la veille |
 
 **Le temps.** D'après l'horodatage de nos conversations, les deux fiches m'ont pris environ quatre heures, sur deux jours : un peu moins de trois heures le 30/09, environ une heure et demie le 01/10. Le découpage en a pris plus d'une heure et demie de plus, le même jour, surtout en travail de l'IA : j'y ai écrit trois messages, dont un sur la façon d'envoyer les fiches. La mise en ligne a suivi, un quart d'heure après mon choix. Je ne le dis pas pour montrer que j'ai beaucoup travaillé. L'IA peut se voir comme un outil qui fait gagner du temps ; mais ce temps peut être réinvesti dans le travail, pour le rendre encore meilleur. Ici, il est allé à relire, contester, faire vérifier les sources, faire lire par des étudiants simulés, couper les redites, apporter l'avis d'un ingénieur. Pour le même temps, avec l'IA, un travail humain bâclé devient médiocre, un travail médiocre devient bon, un bon travail devient excellent.
 
@@ -223,7 +233,7 @@ Elle avait annoncé une mise en place avec moi ; elle l'a faite seule, en un qua
 
 **Ce que j'aurais pu mieux faire** : activer le mode plan et retoucher son plan avant qu'elle écrive ; répondre à ses questions, puisqu'elle m'en a laissé à chaque livraison ; dire ce que j'avais en tête, les études, au lieu de le croire dit.
 
-La pratique, en treize points :
+La pratique, en quatorze points :
 1. **Donnez l'intention, le contexte et vos contraintes**, pas la solution (§ 1).
 2. **Passez en mode plan, et retouchez son plan** avant qu'elle écrive : la puissance est dans vos retouches (§ 1, § 3, § 7, § 8 et § 10).
 3. **Laissez-la lire ce qui existe** avant d'écrire (§ 1).
@@ -237,9 +247,10 @@ La pratique, en treize points :
 11. **Avant qu'elle écrive, demandez son avis et ses objections**, et confrontez votre travail au regard de quelqu'un du métier (§ 9).
 12. **Faites mesurer ce que l'IA estime**, et prouvez un résumé point par point, par une IA qui ne l'a pas écrit (§ 10).
 13. **Avant de publier, relisez ce qui sort**, et vérifiez le résultat là où le lecteur le verra (§ 11).
+14. **Relisez le résumé à voix haute, à la place du lecteur le moins armé** : un mot non défini, un exemple hors du point qu'il prouve, c'est un trou (§ 12).
 
 **Et pour votre projet.** À plusieurs, les retours ne vont pas dans la mémoire d'un outil : les règles vont dans AGENTS.md, par le responsable des règles, et le reste dans une note du socle. Pour du code, vérifier, c'est un test qui tourne ou une datasheet ouverte ; le lecteur, c'est l'utilisateur.
 
-C'est la méthode de l'autre fiche : le contexte, vos hypothèses, les siennes, vos réponses, la décision, et alors seulement l'action. Elle n'a pas été suivie tout du long : la v1 a sauté l'étape des questions : je ne les ai pas demandées, et sans mode plan, je n'ai pas vu son plan à temps. C'est là qu'elle a dérapé. Pour les répétitions, pour l'avis de mon frère, puis pour le découpage, elle l'a été : l'avis et le plan d'abord, mes décisions, puis le texte. Pour l'avis de mon frère, une décision oubliée est venue après, et le texte l'a suivie. Pour le découpage, l'IA a commencé sans attendre ma réponse sur deux points que je n'avais pas compris : ils se sont appliqués par défaut. Le raconter fait aussi partie de la pratique.
+C'est la méthode de l'autre fiche : le contexte, vos hypothèses, les siennes, vos réponses, la décision, et alors seulement l'action. Elle n'a pas été suivie tout du long : la v1 a sauté l'étape des questions : je ne les ai pas demandées, et sans mode plan, je n'ai pas vu son plan à temps. C'est là qu'elle a dérapé. Pour les répétitions, pour l'avis de mon frère, pour le découpage, puis pour la relecture du résumé, elle l'a été : l'avis et le plan d'abord, mes décisions, puis le texte. Pour l'avis de mon frère, une décision oubliée est venue après, et le texte l'a suivie. Pour le découpage, l'IA a commencé sans attendre ma réponse sur deux points que je n'avais pas compris : ils se sont appliqués par défaut. Le raconter fait aussi partie de la pratique.
 
 Olivier & Mentordinator

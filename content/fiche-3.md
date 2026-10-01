@@ -1,9 +1,7 @@
 ---
 title: "3. Ayez peur"
-graphe: ["source-01", "source-02", "source-03", "source-07", "source-08"]
+graphe: ["source-01", "source-02", "source-03", "source-06", "source-07", "source-08"]
 ---
-
-> Donner un cerveau à l'IA de votre équipe · fiche 3 sur 9 · version découpée du 01/10/26, d'après la version complète
 
 ↑ [[index|L'essentiel]] · ← [[fiche-2|2. Le cerveau, vu dans Obsidian]] · [[fiche-4|4. Nourrir, puis réfléchir]] →
 
@@ -36,7 +34,7 @@ Pour toute tâche qui compte :
 >
 > Écrivez la vôtre avec ces cinq parties, vos mots et votre projet, ou retravaillez-la avec votre IA : « Voici ma demande. Que te manque-t-il pour bien la faire ? » Une demande comprise se répare ; une demande collée, non.
 
-**L'IA ne prévient pas quand elle sort de son terrain.** Dans la même expérience, sur une tâche d'apparence aussi difficile, mais construite pour que l'IA se trompe : 84,5 % de bonnes réponses sans IA, 60 à 71 % avec, et des réponses fausses mieux rédigées [\[1\]](source-01). Ceux qui s'étaient trompés avaient repris la réponse de l'IA sans l'interroger [\[1\]](source-01).
+**L'IA ne prévient pas quand elle sort de son terrain.** Elle fait ce qu'on lui demande même quand elle ne sait pas, sans le dire : elle est faite pour vous satisfaire, au point de vous donner raison ([[fiche-4#Réfléchir avec l'IA|fiche 4]]) [\[6\]](source-06). Dans la même expérience, sur une tâche d'apparence aussi difficile, mais construite pour que l'IA se trompe : dire au PDG laquelle de trois marques développer, avec un tableur de chiffres et des entretiens d'initiés ; le tableur seul semblait suffire, mais un détail des entretiens renversait la conclusion, et GPT-4, nourri de tout, le ratait. 84,5 % de bonnes réponses sans IA, 60 à 71 % avec, et des réponses fausses mieux rédigées [\[1\]](source-01). Ceux qui s'étaient trompés avaient repris la réponse de l'IA sans l'interroger [\[1\]](source-01).
 
 **La méfiance paie.** À Stanford (47 participants, surtout des étudiants), ceux qui avaient un assistant de code ont écrit un code moins sûr sur 4 tâches sur 5, en le croyant plus souvent sûr ; ceux qui se méfiaient de l'IA et retravaillaient leurs demandes écrivaient un code plus sûr (corrélation) [\[2\]](source-02).
 
@@ -72,6 +70,7 @@ Toutes les sources, par famille : [[index#Toutes les sources|L'essentiel]].
 - [\[1\]](source-01) **Quand l'IA aide, et quand elle trompe sans prévenir.** 758 consultants, avec et sans GPT-4. [Dell'Acqua et al., Harvard et BCG, *Organization Science*, 11/03/26](https://doi.org/10.1287/orsc.2025.21838)
 - [\[2\]](source-02) **Se méfier de l'IA rend le code plus sûr.** Des participants, surtout des étudiants, avec et sans assistant de code. [Perry et al., Stanford, ACM CCS, 26/11/23](https://arxiv.org/abs/2211.03622)
 - [\[3\]](source-03) **L'IA amplifie ce qui existe déjà.** Près de 5 000 professionnels du logiciel interrogés. [DORA, Google Cloud, 23/09/25](https://services.google.com/fh/files/misc/2025_state_of_ai_assisted_software_development.pdf)
+- [\[6\]](source-06) **L'IA tend à vous donner raison.** Cinq assistants d'IA de 2023 testés : ils adaptaient souvent leurs réponses à ce que l'utilisateur semblait croire, même quand il se trompait. [Sharma et al., Anthropic, ICLR 2024, 20/10/23](https://arxiv.org/abs/2310.13548)
 - [\[7\]](source-07) **Les compétences s'usent quand la machine fait le travail.** Un essai classique sur l'automatisation des usines et des cockpits. [Bainbridge, « Ironies of Automation », *Automatica*, 1983](https://doi.org/10.1016/0005-1098(83)90046-8)
 - [\[8\]](source-08) **Apprendre avec l'IA sans chercher à comprendre, c'est moins apprendre.** 52 développeurs qui découvraient une bibliothèque Python ; pas encore relue par des pairs. [Shen et Tamkin, Anthropic, 29/01/26](https://www.anthropic.com/research/AI-assistance-coding-skills), et [l'article](https://arxiv.org/abs/2601.20245)
 

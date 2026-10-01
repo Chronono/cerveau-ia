@@ -3,18 +3,16 @@ title: "2. Le cerveau de l'IA, vu dans Obsidian"
 graphe: ["source-19", "source-20"]
 ---
 
-> Donner un cerveau à l'IA de votre équipe · fiche 2 sur 9 · version découpée du 01/10/26, d'après la version complète
-
 ↑ [[index|L'essentiel]] · ← [[fiche-1|1. Un chatbot n'est pas un collègue]] · [[fiche-3|3. Ayez peur]] →
 
 > [!note] « Obsidian », un mot d'habitude
-> Pour donner un cerveau à votre IA, un dépôt git de fichiers Markdown, de simples fichiers texte, suffit : aucun outil n'est nécessaire, un éditeur de texte convient. J'appelle souvent ce jeu de fichiers « Obsidian » par habitude, parce que c'est l'outil avec lequel je les lis ; ce n'est absolument pas une obligation. Obsidian apporte une lecture confortable du Markdown, et le graphe des liens entre vos notes.
+> Pour donner un cerveau à votre IA, un dépôt git de fichiers Markdown, de simples fichiers texte, suffit : aucun outil particulier n'est nécessaire, un éditeur de texte convient. J'appelle souvent ce jeu de fichiers « Obsidian » par habitude, parce que c'est l'outil avec lequel je les lis ; ce n'est absolument pas une obligation. Je le préconise parce que j'aime cet outil, et que je l'utilisais bien avant l'IA : il apporte une lecture confortable du Markdown, et le graphe des liens entre vos notes, que j'ai refait sur ce site. C'est la vue graphique, à droite sur ordinateur, en bas de page après les sources sur téléphone ; pour rester lisible, elle ne trace que les liens de L'essentiel vers les fiches et des fiches vers leurs sources, en orange.
 
-Imaginez un collègue brillant qui perd la mémoire à chaque session : il ne sait que ce qu'il lit dans le carnet laissé par l'équipe. Ce carnet est le socle, son cerveau : vos notes sont ses souvenirs, leurs liens ses associations d'idées. Obsidian vous le montre, et vous permet de l'écrire et de l'entretenir [\[19\]](source-19) :
-- **Des fichiers texte sur votre disque.** Chaque note est un fichier Markdown du dossier, le vault : vous lisez exactement ce que l'IA lit et écrit, et ce que git versionne. Ni format fermé, ni connecteur.
-- **Les liens.** `[[decision-hebergeur]]` relie à la note de ce nom, écrit en clair : l'IA suit le lien comme vous. Hors du Markdown standard, cette syntaxe, que l'IA lit très bien, n'est prévue par GitHub que pour ses wikis ; pour un lien cliquable dans votre dépôt sur GitHub, écrivez un lien relatif, `[le choix de l'hébergeur](decisions/decision-hebergeur.md)` [\[20\]](source-20).
-- **Les rétroliens** (*backlinks*) : les notes qui pointent vers une note ([[fiche-4#Nourrir le cerveau|fiche 4]]). Ce n'est qu'une recherche de son nom, enregistrée nulle part, qu'Obsidian affiche seul et à jour ; sans lui, `git grep -lF "[[decision-hebergeur"` [\[20\]](source-20), ou votre IA (« quelles notes citent decision-hebergeur ? »), donne la même liste.
-- **La vue graphe** : chaque note est un point, chaque lien un trait ; un point isolé est un souvenir que l'IA risque de ne pas trouver ([[fiche-4#Nourrir le cerveau|fiche 4]]). C'est le seul vrai propre de l'outil : sans lui, « liste les notes que rien ne cite » se demande à l'IA, mais sans l'image.
+Imaginez un collègue brillant qui perd la mémoire à chaque session : il ne sait que ce qu'il lit dans les notes laissées par l'équipe. Ces notes sont sa **mémoire**, l'une des trois couches du **socle**, le dossier de fichiers texte où l'IA travaille ([[fiche-1|fiche 1]]). Ce socle est son **cerveau** : vos notes sont ses souvenirs, leurs liens ses associations d'idées. Obsidian appelle ce dossier un *vault* ; il vous le montre, et vous permet de l'écrire et de l'entretenir [\[19\]](source-19) :
+- **Des fichiers texte sur votre disque.** Chaque note est un fichier Markdown du vault : vous lisez exactement ce que l'IA lit et écrit, et ce que git versionne. Ni format fermé, ni connecteur.
+- **Les liens.** `[[decision-hebergeur]]` relie à la note de ce nom, écrit en clair : l'IA suit le lien comme vous. Cette syntaxe n'est pas du Markdown standard : l'IA la lit très bien, mais GitHub ne la reconnaît que dans ses wikis [\[20\]](source-20). C'est pourquoi je conseille un lecteur Markdown qui sait suivre ces liens, Obsidian ou un autre ; pour un lien cliquable dans votre dépôt vu sur GitHub, écrivez un lien relatif, `[le choix de l'hébergeur](decisions/decision-hebergeur.md)`.
+- **Les rétroliens** (*backlinks*). Les rétroliens d'une note sont la liste des notes qui contiennent un lien vers elle : ouvrez `decision-hebergeur`, et Obsidian affiche à côté chaque note qui la cite, sans que vous ayez rien à écrire, toujours à jour ([[fiche-4#Nourrir le cerveau|fiche 4]]). Sans Obsidian, une recherche de texte donne la même liste : `git grep -l decision-hebergeur` [\[20\]](source-20), où grep est la commande qui cherche un texte dans des fichiers, `git grep` sa version livrée avec git, qui fouille les fichiers du dépôt, sur Windows comme ailleurs, et `-l` ne garde que les noms des fichiers trouvés. Ou votre IA : « quelles notes citent decision-hebergeur ? ».
+- **La vue graphe** : chaque note est un point, chaque lien un trait ; un point isolé est un souvenir que l'IA risque de ne pas trouver ([[fiche-4#Nourrir le cerveau|fiche 4]]). C'est la vraie différence d'Obsidian avec les autres outils Markdown, et elle montre à quel point le choix d'Obsidian compte peu : sans lui, « liste les notes que rien ne cite » se demande à l'IA, mais sans l'image.
 
 | Sans cerveau partagé | Avec le socle |
 |---|---|
@@ -25,14 +23,14 @@ Imaginez un collègue brillant qui perd la mémoire à chaque session : il ne sa
 | Quand une hypothèse tombe, personne ne sait ce qu'elle entraîne | Ses rétroliens montrent chaque note à revoir |
 | Personne ne voit ce que sait l'IA | Vous le lisez, et le graphe montre les notes isolées |
 
-Tout socle en fichiers texte donne les cinq premières lignes, les rétroliens par une simple recherche, qu'Obsidian affiche sans qu'on les demande ; seul le graphe, en image, lui est propre.
+Tout socle en fichiers texte donne les cinq premières lignes ; seule la dernière demande le graphe. Comment une note dit le solide et le supposé, et d'où elle vient : [[fiche-4#Nourrir le cerveau|fiche 4]].
 
 **Pourquoi c'est important** : l'IA amplifie ce qu'elle trouve ([[fiche-3|fiche 3]]), c'est-à-dire ce cerveau. Ce que vous ne voyez pas, vous ne le contrôlez pas : Obsidian vous le fait voir.
 
-**Obsidian n'est pas obligatoire** (encadré) ; je le préconise parce que je l'utilise depuis longtemps et que j'aime beaucoup l'outil. **À la place de GitHub**, un Google Drive ou un autre cloud peut servir, mais la feuille de route ([[fiche-5|fiche 5]]) repose sur git : l'IA dit ce que ça change.
+**À la place de GitHub**, un Google Drive ou un autre cloud peut servir, mais la feuille de route ([[fiche-5|fiche 5]]) repose sur git : l'IA dit ce que ça change.
 
 > [!quote] L'avis de l'IA
-> Je ne vois ni Obsidian ni son graphe : je lis des fichiers et suis les liens écrits dedans. Ce qui compte, c'est le format, pas l'application. N'importe quel éditeur de texte remplace Obsidian sans rien changer au socle ni au rituel ; vous perdez l'affichage des rétroliens et le graphe, et c'est à moi, ou à une recherche, de trouver quelles notes en citent une autre.
+> Je ne vois ni Obsidian ni son graphe : je lis des fichiers et suis les liens écrits dedans. Ce qui compte, c'est le format, pas l'application.
 >
 > Remplacer git par un Drive change davantage. Un Google Doc n'est pas un fichier texte sur votre disque : Drive pour ordinateur n'y met qu'un raccourci, un fichier .gdoc qui pointe vers le document en ligne [\[19\]](source-19). Pour le lire, il me faut un connecteur ou un export, et la méthode me demande d'écrire et de ranger vos notes, pas seulement de les lire. Des fichiers .md dans un Drive, je les lis ; mais Drive peut effacer les anciennes versions d'un fichier au bout de 30 jours [\[19\]](source-19), et le rituel repose sur git. Surtout, ne mettez pas un dépôt git dans un dossier synchronisé par un cloud : la documentation de git le déconseille, le dépôt peut se corrompre [\[20\]](source-20).
 >

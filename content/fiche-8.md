@@ -1,9 +1,7 @@
 ---
 title: "8. Améliorer, niveau par niveau"
-graphe: ["source-04", "source-08", "source-17", "source-20", "source-21"]
+graphe: ["source-04", "source-08", "source-17", "source-20", "source-21", "source-22"]
 ---
-
-> Donner un cerveau à l'IA de votre équipe · fiche 8 sur 9 · version découpée du 01/10/26, d'après la version complète
 
 ↑ [[index|L'essentiel]] · ← [[fiche-7|7. Le rituel, tenu par l'IA]] · [[fiche-9|9. Dangers et parades]] →
 
@@ -26,7 +24,7 @@ Jugez sur ces critères, pas au ressenti : 16 développeurs expérimentés croya
 
 ## La veille
 
-L'IA évolue très vite : des outils, des modes et des réglages de ces fiches seront dépassés, et c'est pour ça que leurs faits sur les outils sont datés. Une veille technologique est indispensable : suivez les nouveautés de vos outils, leur documentation, ce que publient leurs éditeurs, pour rester à jour, continuer de gagner en compétences et ne pas vous faire dépasser. Mais apprendre un nouvel outil, c'est exactement la situation de l'étude de la [[fiche-3#Le plus grand danger, vous|fiche 3]] : avec l'IA, on apprend moins, sauf si on s'en sert pour comprendre [\[8\]](source-08). Étudiez donc avant d'employer : c'est ce que je fais pour chaque nouvelle technologie de mon propre serveur, par exemple Tailscale (un réseau privé entre mes appareils), avant de m'en servir. Ce qu'un membre apprend entre dans le socle, comme le reste ([[fiche-4#Nourrir le cerveau|fiche 4]]). Gardez toujours un coup d'avance, surtout sur la machine.
+L'IA évolue très vite : des outils, des modes et des réglages de ces fiches seront dépassés, et c'est pour ça que leurs faits sur les outils sont datés. Une veille technologique est indispensable : suivre, régulièrement et avec méthode, ce qui change dans vos outils et votre domaine, les nouveautés, la documentation, ce que publient les éditeurs, pour rester à jour, continuer de gagner en compétences et ne pas vous faire dépasser. Mettez-la en place dès le début : les bibliothèques de l'Université Rennes 2 expliquent ce qu'est une veille, ses étapes, et comment l'automatiser par des alertes et des flux RSS [\[22\]](source-22). Mais apprendre un nouvel outil, c'est exactement la situation de l'étude de la [[fiche-3#Le plus grand danger, vous|fiche 3]] : avec l'IA, on apprend moins, sauf si on s'en sert pour comprendre [\[8\]](source-08). Étudiez donc avant d'employer : c'est ce que je fais pour chaque nouvelle technologie de mon propre serveur, par exemple Tailscale (un réseau privé entre mes appareils), avant de m'en servir. Ce qu'un membre apprend entre dans le socle, comme le reste ([[fiche-4#Nourrir le cerveau|fiche 4]]). Gardez toujours un coup d'avance, surtout sur la machine.
 
 ## Plus tard, un serveur qui veille
 
@@ -42,9 +40,10 @@ Toutes les sources, par famille : [[index#Toutes les sources|L'essentiel]].
 
 - [\[4\]](source-04) **Le ressenti ne prouve rien.** Des développeurs se croyaient plus rapides avec l'IA, et l'étaient moins. [METR, étude du 12/07/25](https://arxiv.org/abs/2507.09089), puis [son suivi du 24/02/26](https://metr.org/blog/2026-02-24-uplift-update/)
 - [\[8\]](source-08) **Apprendre avec l'IA sans chercher à comprendre, c'est moins apprendre.** 52 développeurs qui découvraient une bibliothèque Python ; pas encore relue par des pairs. [Shen et Tamkin, Anthropic, 29/01/26](https://www.anthropic.com/research/AI-assistance-coding-skills), et [l'article](https://arxiv.org/abs/2601.20245)
-- [\[17\]](source-17) **Règles, mémoire, hooks et interdits dans Claude Code.** [Mémoire et AGENTS.md](https://code.claude.com/docs/en/memory), [bonnes pratiques](https://code.claude.com/docs/en/best-practices), [hooks](https://code.claude.com/docs/en/hooks-guide), [permissions](https://code.claude.com/docs/en/permissions), [mode plan](https://code.claude.com/docs/en/permission-modes#analyze-before-you-edit-with-plan-mode), [PowerShell](https://code.claude.com/docs/en/permissions)
+- [\[17\]](source-17) **Règles, mémoire, hooks et interdits dans Claude Code.** [Mémoire et AGENTS.md](https://code.claude.com/docs/en/memory), [bonnes pratiques](https://code.claude.com/docs/en/best-practices), [hooks](https://code.claude.com/docs/en/hooks-guide), [permissions](https://code.claude.com/docs/en/permissions), [mode plan](https://code.claude.com/docs/en/permission-modes#analyze-before-you-edit-with-plan-mode), [PowerShell](https://code.claude.com/docs/en/permissions), [les coûts d'une longue session](https://code.claude.com/docs/en/costs), [la fenêtre de contexte et le résumé](https://code.claude.com/docs/en/context-window)
 - [\[20\]](source-20) **Git, GitHub et le contrôle de secrets.** [Conflits et fusion](https://git-scm.com/docs/git-merge), [push refusé](https://docs.github.com/en/get-started/using-git/dealing-with-non-fast-forward-errors), [fins de ligne](https://git-scm.com/docs/gitattributes), [pre-commit](https://pre-commit.com), [gitleaks](https://github.com/gitleaks/gitleaks), [ne pas synchroniser un dépôt par un cloud](https://git-scm.com/docs/gitfaq), [chercher dans les fichiers](https://git-scm.com/docs/git-grep), [les liens dans un fichier Markdown sur GitHub](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax), [les liens d'un wiki GitHub](https://docs.github.com/en/communities/documenting-your-project-with-wikis/editing-wiki-content)
 - [\[21\]](source-21) **Les sondages par bot.** [Telegram](https://core.telegram.org/bots/api), [Discord](https://docs.discord.com/developers/resources/poll), [WhatsApp](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/send-messages)
+- [\[22\]](source-22) **Organiser sa veille technologique.** Ce qu'est une veille, ses étapes, et comment l'automatiser par des alertes et des flux RSS. [Bibliothèques de l'Université Rennes 2, « Organiser sa veille informationnelle », 04/05/26](https://tutos.bu.univ-rennes2.fr/c.php?g=688574)
 
 ↑ [[index|L'essentiel]] · ← [[fiche-7|7. Le rituel, tenu par l'IA]] · [[fiche-9|9. Dangers et parades]] →
 
