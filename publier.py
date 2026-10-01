@@ -2,6 +2,7 @@
 """Copie les fiches « Cerveau IA » du vault dans content/, au format du site.
 
     python publier.py             copie seulement (pour regarder le diff)
+    python publier.py --commiter  copie et commit en local, sans push : on relit, puis git push
     python publier.py --pousser   copie, commit et push : le site se met à jour en quelques minutes
 
 Le vault reste la seule source : on corrige les fiches dans Obsidian, jamais dans content/.
@@ -171,13 +172,16 @@ def main():
     if erreurs:
         print("\n".join(erreurs))
         sys.exit("rien n'est poussé : corriger d'abord ces points dans le vault")
-    if "--pousser" in sys.argv:
+    if "--pousser" in sys.argv or "--commiter" in sys.argv:
         git = lambda *a: subprocess.run(["git", "-C", ICI, *a], check=True)
         git("add", "-A", "content")
         if subprocess.run(["git", "-C", ICI, "diff", "--cached", "--quiet"]).returncode == 0:
             print("rien n'a changé")
             return
         git("commit", "-q", "-m", "Fiches mises à jour depuis le vault")
+        if "--pousser" not in sys.argv:
+            print("commité en local, pas poussé : git push quand tout est relu")
+            return
         git("push", "-q")
         print("poussé : https://chronono.github.io/cerveau-ia/ dans quelques minutes")
 
