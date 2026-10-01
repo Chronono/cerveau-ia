@@ -1,3 +1,11 @@
 @use "./base.scss";
+@use "./variables.scss" as *;
 
 // put your custom CSS here!
+
+// Sur téléphone, le titre du site tient en deux ou trois lignes au lieu de six.
+@media all and ($mobile) {
+  h2.page-title {
+    font-size: 1.1rem;
+  }
+}
