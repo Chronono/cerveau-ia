@@ -39,7 +39,7 @@ Ils montrent comment c'est fait à l'intérieur. Ne les collez pas : un exemple 
 
 ### L'arborescence
 
-Chaque dossier est une couche de la [[fiche-1|fiche 1]] : les règles, la mémoire, les skills, plus les réglages. Votre IA peut la poser.
+Chaque dossier est une couche de la [[fiche-1|fiche 1]] : les règles, la mémoire, les skills, plus les réglages. Votre IA peut la poser. C'est un point de départ : comment la faire vôtre, [[fiche-4#Nourrir le cerveau|fiche 4]].
 
 ```text
 mon-projet/
