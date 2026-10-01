@@ -5,19 +5,25 @@ graphe: ["source-01", "source-02", "source-03", "source-06", "source-07", "sourc
 
 ↑ [[index|L'essentiel]] · ← [[fiche-2|2. Le cerveau, vu dans Obsidian]] · [[fiche-4|4. Nourrir, puis réfléchir]] →
 
-Ce que l'IA apporte est réel : dans une expérience de Harvard et du BCG (758 consultants), ceux qui avaient GPT-4 ont fini, sur les tâches que l'IA savait faire, environ 12 % de tâches en plus, 25 % plus vite, avec un travail jugé plus de 30 % meilleur [\[1\]](source-01).
+Vous l'avez sans doute déjà remarqué : l'IA vous rend plus productifs. La mesure existe. Dans une expérience de Harvard et du BCG (758 consultants), ceux qui avaient GPT-4 ont fini, sur les tâches que l'IA savait faire, environ 12 % de tâches en plus, 25 % plus vite, avec un travail jugé plus de 30 % meilleur [\[1\]](source-01).
 
-Vous pouvez avoir peur de réaliser cet outil IA. Oui, et je vous recommande d'être absolument effrayés par ça. Si vous avez peur, vous allez vouloir contrôler la connaissance de votre socle, travailler avec lui sur vos incertitudes, vos hypothèses, répondre aux siennes, et ensuite décider. Plus vous avez peur, plus ce sera solide.
+La même expérience a une seconde moitié, une tâche d'apparence aussi difficile, mais construite pour que l'IA se trompe : dire au PDG laquelle de trois marques développer, avec un tableur de chiffres et des entretiens d'initiés ; le tableur seul semblait suffire, mais un détail des entretiens renversait la conclusion, et GPT-4, nourri de tout, le ratait. 84,5 % de bonnes réponses sans IA, 60 à 71 % avec, et des réponses fausses mieux rédigées ; ceux qui s'étaient trompés avaient repris sa réponse sans l'interroger [\[1\]](source-01). L'IA ne prévient pas quand elle sort de son terrain : elle fait ce qu'on lui demande même quand elle ne sait pas, sans le dire, parce qu'elle est faite pour vous satisfaire, au point de vous donner raison ([[fiche-4#Réfléchir avec l'IA|fiche 4]]) [\[6\]](source-06).
+
+Alors vous pouvez avoir peur de construire ce cerveau : peur de perdre la main, de vous retrouver avec des dizaines, voire des centaines de notes écrites par l'IA sans vraiment savoir ce qui se passe, de ne plus pouvoir dire pourquoi votre projet est fait comme il est. Vous avez raison. Je vous recommande même d'être absolument effrayés. Si vous avez peur, vous allez vouloir contrôler ce que votre socle sait, travailler avec l'IA sur vos incertitudes et vos hypothèses, répondre aux siennes, et ensuite décider. Plus vous avez peur, plus ce sera solide.
+
+Mais avoir peur n'est pas tout relire. Un manager qui vérifie chaque ligne de son équipe est un micro-manager : il perd plus de temps qu'il ne gagne de contrôle. Un commandant ne suit pas chaque soldat ; il s'assure que les ordres portent la stratégie et que chacun les a compris. Avec l'IA, la peur utile porte sur ce qu'elle sait, sur vos hypothèses et sur vos décisions, pas sur chaque ligne qu'elle écrit. Un ingénieur DevOps le dit plus bas, en termes de tactique et de stratégie.
+
+Deux peurs, donc, et cette fiche répond aux deux : d'abord ce que l'IA sait et suppose, par une méthode ; puis ce que vous pourriez perdre en travaillant avec elle.
 
 ## La méthode
 
-Pour toute tâche qui compte :
+Pour toute tâche qui engage le projet : un choix d'architecture, un fournisseur, une semaine de travail. Pas pour un changement qui se dit en une phrase.
 1. **Le contexte** : l'IA lit ce que le socle sait du sujet ; vous complétez, et ce qui manquait entre dans le socle ([[fiche-4#Nourrir le cerveau|fiche 4]]).
 2. **Vos hypothèses et incertitudes.**
 3. **Ses hypothèses et ses questions**, qu'elle liste à votre demande avant d'agir ([[fiche-4#Le mode plan|fiche 4, mode plan]]).
 4. **Vos réponses** ; l'inconnu va dans `hypotheses/`.
-5. **La décision**, humaine, écrite dans `decisions/`.
-6. **Alors seulement, l'action.**
+5. **La décision**, humaine. L'IA l'écrit dans `decisions/`, avec les options et vos raisons, et range l'inconnu dans `hypotheses/`, statut « à vérifier » ([[fiche-4#Réfléchir avec l'IA|fiche 4, « Écrire ce qui sort »]]). Vous relisez ce qu'elle a écrit : une minute, et c'est elle qui vous garde la main.
+6. **Alors seulement, l'action.** À la tâche suivante, l'étape 1 relira ces notes : votre décision d'hier est le contexte d'aujourd'hui.
 
 > [!example] Une demande, vue de l'intérieur
 > Un exemple à lire, pas à coller :
@@ -29,12 +35,10 @@ Pour toute tâche qui compte :
 > | « Nous devons choisir… » | Le but, en une phrase ; sans lui, l'IA devine ce que vous voulez. |
 > | « Lis d'abord index.md… » | Étape 1 : le contexte vient du socle, pas de votre mémoire ; toute l'équipe part de la même base. |
 > | « Nous supposons… nous ne savons pas… » | Étape 2 : écrites, vos hypothèses se discutent au lieu d'être confirmées. |
-> | « Avant d'agir, liste… » | Étape 3 : ses hypothèses deviennent visibles ; c'est là qu'on attrape l'erreur qu'elle ne signale pas (ci-dessous). |
+> | « Avant d'agir, liste… » | Étape 3 : ses hypothèses deviennent visibles ; c'est là qu'on attrape l'erreur qu'elle ne signale pas (ci-dessus, la tâche piège). |
 > | « Ne propose rien avant nos réponses. » | La porte fermée à l'action trop tôt : sans elle, rien ne l'empêche de répondre tout de suite. |
 >
-> Écrivez la vôtre avec ces cinq parties, vos mots et votre projet, ou retravaillez-la avec votre IA : « Voici ma demande. Que te manque-t-il pour bien la faire ? » Une demande comprise se répare ; une demande collée, non.
-
-**L'IA ne prévient pas quand elle sort de son terrain.** Elle fait ce qu'on lui demande même quand elle ne sait pas, sans le dire : elle est faite pour vous satisfaire, au point de vous donner raison ([[fiche-4#Réfléchir avec l'IA|fiche 4]]) [\[6\]](source-06). Dans la même expérience, sur une tâche d'apparence aussi difficile, mais construite pour que l'IA se trompe : dire au PDG laquelle de trois marques développer, avec un tableur de chiffres et des entretiens d'initiés ; le tableur seul semblait suffire, mais un détail des entretiens renversait la conclusion, et GPT-4, nourri de tout, le ratait. 84,5 % de bonnes réponses sans IA, 60 à 71 % avec, et des réponses fausses mieux rédigées [\[1\]](source-01). Ceux qui s'étaient trompés avaient repris la réponse de l'IA sans l'interroger [\[1\]](source-01).
+> Sans cerveau, cette demande est tout ce que l'IA sait de vous : chaque mot compte, et bien l'écrire est crucial. Avec un socle et des règles, trois de ses cinq parties n'ont plus à être dites : « lis d'abord index.md » est une règle, « liste ce que tu supposes avant d'agir » en est une autre, « ne propose rien avant nos réponses » est le mode plan ([[fiche-4#Le mode plan|fiche 4]]). Il vous reste le but et vos hypothèses du jour, que le socle ne peut pas deviner ; le reste, l'IA le reconstruit avec vos règles et votre contexte, et une demande écrite vite tient. C'est le socle qui se soigne, plus que la demande. Écrivez tout de même la vôtre une fois avec ces cinq parties, pour voir ce que vos règles lui épargneront ; ou retravaillez-la avec votre IA : « Voici ma demande. Que te manque-t-il pour bien la faire ? » Une demande comprise se répare ; une demande collée, non.
 
 **La méfiance paie.** À Stanford (47 participants, surtout des étudiants), ceux qui avaient un assistant de code ont écrit un code moins sûr sur 4 tâches sur 5, en le croyant plus souvent sûr ; ceux qui se méfiaient de l'IA et retravaillaient leurs demandes écrivaient un code plus sûr (corrélation) [\[2\]](source-02).
 
