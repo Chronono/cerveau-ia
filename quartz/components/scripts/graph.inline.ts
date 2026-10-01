@@ -277,6 +277,9 @@ async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
     })
   }
 
+  // opacité des noms hors survol, réglée par le zoom
+  let labelBaseAlpha = 0
+
   function renderLabels() {
     tweens.get("label")?.stop()
     const tweenGroup = new TweenGroup()
@@ -296,11 +299,22 @@ async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
             100,
           ),
         )
+      } else if (hoveredNodeId !== null && n.active) {
+        // au survol, on lit aussi le nom des voisins : les fiches d'une source, les sources d'une fiche
+        tweenGroup.add(
+          new Tweened<Text>(n.label).to(
+            {
+              alpha: 1,
+              scale: { x: defaultScale, y: defaultScale },
+            },
+            100,
+          ),
+        )
       } else {
         tweenGroup.add(
           new Tweened<Text>(n.label).to(
             {
-              alpha: n.label.alpha,
+              alpha: labelBaseAlpha,
               scale: { x: defaultScale, y: defaultScale },
             },
             100,
@@ -514,6 +528,7 @@ async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
           // zoom adjusts opacity of labels too
           const scale = transform.k * opacityScale
           let scaleOpacity = Math.max((scale - 1) / 3.75, 0)
+          labelBaseAlpha = scaleOpacity
           const activeNodes = nodeRenderData.filter((n) => n.active).flatMap((n) => n.label)
 
           for (const label of labelsContainer.children) {
