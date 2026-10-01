@@ -95,11 +95,6 @@ export default ((opts?: Partial<GraphOptions>) => {
             </svg>
           </button>
         </div>
-        <p class="graph-legende">
-          Un exemple de ce que vous donne Obsidian : chaque page est un point, chaque lien un
-          trait. Pour rester lisible, ce graphe ne trace que les liens de L'essentiel vers les
-          fiches, et des fiches vers leurs sources <span class="pastille-source"></span>.
-        </p>
         <div class="global-graph-outer">
           <div class="global-graph-container" data-cfg={JSON.stringify(globalGraph)}></div>
         </div>

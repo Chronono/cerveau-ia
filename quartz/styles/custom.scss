@@ -3,22 +3,6 @@
 
 // put your custom CSS here!
 
-.graph-legende {
-  font-size: 0.8rem;
-  line-height: 1.4;
-  color: var(--darkgray);
-  margin: 0 0 0.5rem;
-}
-
-.pastille-source {
-  display: inline-block;
-  width: 0.7em;
-  height: 0.7em;
-  border-radius: 50%;
-  background: #e8833a;
-  vertical-align: baseline;
-}
-
 // Sur téléphone, le titre du site tient en deux ou trois lignes au lieu de six.
 @media all and ($mobile) {
   h2.page-title {
