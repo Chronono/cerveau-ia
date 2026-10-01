@@ -40,7 +40,7 @@ export const defaultContentPageLayout: PageLayout = {
     }),
   ],
   right: [
-    Component.Graph({ localGraph: { depth: 2, focusOnHover: true } }),
+    Component.Graph({ localGraph: { depth: 2, focusOnHover: true, linkDistance: 25 } }),
     Component.DesktopOnly(Component.TableOfContents()),
     Component.Backlinks(),
   ],
