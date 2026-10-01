@@ -17,6 +17,7 @@ CONTENU = os.path.join(ICI, "content")
 
 V5 = "Fiche - Un environnement IA à plusieurs (Obsidian + GitHub)"
 COULISSES = "Fiche - Construire avec l'IA, les coulisses d'une fiche"
+NB_SOURCES = 22  # la liste de L'essentiel, numérotée de 1 à NB_SOURCES
 
 # note du vault -> (chemin, page du site)
 PAGES = {COULISSES: (os.path.join(FICHES, COULISSES + ".md"), "coulisses")}
@@ -66,12 +67,12 @@ def relier(texte, page, erreurs):
 
 
 def citer(texte, page):
-    """Chaque [n] (1 à 21) devient un lien vers la page de la source n ; on note les numéros cités."""
+    """Chaque [n] (1 à NB_SOURCES) devient un lien vers la page de la source n ; on note les numéros cités."""
     cites = CITES.setdefault(page, set())
 
     def une(m):
         n = int(m.group(1))
-        if not 1 <= n <= 21:
+        if not 1 <= n <= NB_SOURCES:
             return m.group(0)
         cites.add(n)
         return f"[\\[{n}\\]]({source(n)})"
@@ -113,7 +114,7 @@ def lire_sources(index, erreurs):
         s = re.match(r"> (\d{1,2})\. \*\*(.+?)\*\* ?(.*)$", ligne)
         if s:
             sources[int(s.group(1))] = (famille, s.group(2), s.group(3))
-    if sorted(sources) != list(range(1, 22)):
+    if sorted(sources) != list(range(1, NB_SOURCES + 1)):
         erreurs.append(f"liste des sources de L'essentiel incomplète : {sorted(sources)}")
     return sources
 
