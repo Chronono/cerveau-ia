@@ -107,7 +107,9 @@ Le danger de la [[fiche-3#Le plus grand danger, vous|fiche 3]] se joue à un mom
 **Comment le faire bien.**
 - **Faites-le écrire par l'IA, avec une ou plusieurs questions pièges**, dont la réponse évidente est fausse : elles séparent celui qui a compris de celui qui a reconnu les mots.
 - **Une ou deux questions où l'on rédige**, deux ou trois phrases, pas plus : choisir parmi des réponses se fait en survolant, rédiger demande d'avoir compris. Plus long, le questionnaire devient un devoir, et on finit par le sauter.
-- **Une réponse à peu près juste est fausse**, et la règle doit le dire : l'IA tend à vous donner raison [\[6\]](source-06), et accepterait une réponse floue.
+- **Une seule idée par question.** Une question qui en demande deux ou trois tombe entière pour une moitié manquée, et le questionnaire décourage au lieu d'apprendre.
+- **Juste ou faux se juge sur l'idée centrale**, et la règle doit le dire : l'IA tend à vous donner raison [\[6\]](source-06), et accepterait une réponse floue. L'idée centrale y est, avec un mot imprécis : c'est juste, et l'IA ajoute la précision qui manque. Elle manque, ou la réponse contredit le code ou la fiche : c'est faux. Dans les deux cas, l'IA dit ce qui manquait ; jamais un « presque » sans la correction.
+- **Un bilan à la fin** : les points pas tout à fait acquis, et pour chacun le passage à relire. On relit ces passages-là, pas tout.
 
 **L'autre forme : expliquer.** Vous dites en deux ou trois phrases ce qui change et pourquoi ; l'IA vérifie que vous ne dites pas de bêtises, vous corrige, explique, vérifie que vous avez compris, puis se sert de votre explication pour le message de commit : le commit porte alors votre nom et votre compréhension. Si votre équipe travaille par pull requests (une demande de fusion, relue avant d'entrer dans main), c'est la description de la PR.
 
@@ -123,10 +125,14 @@ Quand : avant chaque commit, sauf pour un changement qui se dit en une phrase.
    complexité) ; pour un document, ce qu'il implique ; pour une règle, ses
    conséquences ; pour un cahier des charges, les points clés. Jamais un
    chiffre quelconque ni une ligne à réciter.
-2. Au moins une question piège, et une où je rédige deux ou trois phrases.
-3. Une réponse à peu près juste est fausse. Pour chaque erreur : corrige,
-   explique, puis repose la question autrement.
-4. Tout juste : commite. Ne saute le questionnaire que si je te le demande.
+2. Une seule idée par question. Au moins une question piège, et une où
+   je rédige deux ou trois phrases.
+3. Juge sur l'idée centrale : présente mais imprécise, c'est juste,
+   ajoute la précision ; absente ou contraire, c'est faux. Pour chaque
+   erreur : corrige, explique, puis repose le même point autrement.
+4. À la fin, un bilan : ce qui n'était pas tout à fait acquis, et pour
+   chaque point le passage à relire (fichier, section).
+5. Tout acquis : commite. Ne saute le questionnaire que si je te le demande.
 ```
 
 **Comment elle est construite.**
@@ -134,7 +140,9 @@ Quand : avant chaque commit, sauf pour un changement qui se dit en une phrase.
   - *Un autre moment, si vous concevez la vôtre* : une seule fois, avant le push de fin de session. La porte reste gardée, mais le rituel change : un commit seul après chaque modification, une ligne « Quand je dis que j'ai fini : questionnaire, puis `git push` », et, au premier message, pousser ce qui ne l'a pas été. Vos coéquipiers voient votre travail plus tard, et les conflits peuvent grossir.
 - **« Ce que tu vas commiter »** : l'IA le voit dans git (`git status`, `git diff`) ; rien n'entre dans l'historique sans être passé par une question.
 - **« Jamais un chiffre quelconque ni une ligne à réciter »** : on vérifie la compréhension, pas le par-cœur ; l'ordre de grandeur qui engage le projet, lui, se comprend, et peut faire une bonne question.
-- **« Repose la question autrement »** : à la même question, on répond de mémoire ; à une autre, on montre qu'on a compris.
+- **« Juge sur l'idée centrale »** : sans critère, l'IA tranche au hasard, soit en acceptant tout, soit en refusant tout ce qui n'est pas mot pour mot dans le texte.
+- **« Repose le même point autrement »** : à la même question, on répond de mémoire ; à une autre, on montre qu'on a compris. Et l'erreur se corrige tout de suite, pas après une relecture complète.
+- **« Un bilan »** : la correction donnée en route s'oublie vite ; le bilan dit quoi relire, et rien de plus.
 - **« Ne saute le questionnaire que si je te le demande »** : rien ne vous empêche de passer outre, c'est le chemin facile (le mode plan, plus haut) ; mais il faut le demander : ce n'est plus un oubli, c'est un choix.
 
 **Concevez la vôtre.** Une équipe qui écrit surtout du code interrogera sur les principes ; une équipe qui a un client, sur son cahier des charges ; une autre préférera l'explication au questionnaire. Demandez à votre IA : « Voici notre projet et cette règle. Quelles questions nous aideraient vraiment à rester maîtres de ce qui entre dans le socle ? Où cette règle nous gênerait-elle ? » Puis la règle entre dans AGENTS.md comme les autres, par le responsable des règles ([[fiche-6#Les gestes, un par un|fiche 6]]) ; si elle s'allonge, faites-en un skill, appelé par une ligne d'AGENTS.md.
