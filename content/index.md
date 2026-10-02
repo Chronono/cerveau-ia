@@ -64,10 +64,11 @@ Les étapes 1 à 5 se font une fois, à la création de l'équipe ; un nouveau m
 - Le rituel, ce sont les gestes git que l'IA fait à votre place, parce qu'un humain les oublie. Au premier message : elle fait commiter ce que vous avez écrit à la main, avec votre accord ; puis un pull, pour récupérer le travail des autres ; puis elle vous dit ce qui a changé depuis votre dernière session, lit le sommaire et pose ses questions. Avant chaque modification, un pull ; après, un commit dont le message dit le fait, puis le push.
 - Pour savoir ce qui a changé, l'IA pose une étiquette git, `vu`, sur le dernier commit que vous avez lu ; elle reste sur votre poste et avance après chaque point.
 - Une règle écrite reste un conseil : d'où le hook, une commande que l'outil lance seul à l'ouverture, quand il le permet, et les interdits bloqués dans ses réglages. Le commit porte votre nom : votre IA, votre responsabilité.
+- Une veille quotidienne des technologies du projet, classée de la régression à la révolution [\[22\]](source-22) : la première session du jour l'écrit dans le dépôt, et un niveau −1, 3 ou 4 ouvre une étude avant tout emploi.
 
 **[[fiche-8|8. Améliorer, niveau par niveau]]**
 - Six niveaux : fonctionnel, cerveau nourri, réflexion écrite, skills, automatismes, serveur. Jugez sur ces critères, pas au ressenti : 16 développeurs expérimentés croyaient avoir gagné 20 % de temps avec l'IA, et en avaient mis 19 % de plus, avec les outils de début 2025 ; les mesures de fin 2025 penchent vers une accélération, sans effet établi [\[4\]](source-04).
-- Chaque erreur corrige le socle, et AGENTS.md reste court. La veille technologique est indispensable : suivre, régulièrement et avec méthode, ce qui change dans vos outils et votre domaine, pour étudier avant d'employer et ne pas vous faire dépasser. Mettez-la en place dès le début ; comment faire : [\[22\]](source-22).
+- Chaque erreur corrige le socle, et AGENTS.md reste court.
 - Plus tard, un serveur qui veille : il relit chaque commit, soumet les conflits au vote de l'équipe, et peut faire le point du matin.
 
 **[[fiche-9|9. Dangers et parades]]**
@@ -113,7 +114,7 @@ Commencer la lecture : [[fiche-1|1. Un chatbot n'est pas un collègue]] →
 > 20. **Git, GitHub et le contrôle de secrets.** [Conflits et fusion](https://git-scm.com/docs/git-merge), [push refusé](https://docs.github.com/en/get-started/using-git/dealing-with-non-fast-forward-errors), [fins de ligne](https://git-scm.com/docs/gitattributes), [pre-commit](https://pre-commit.com), [gitleaks](https://github.com/gitleaks/gitleaks), [ne pas synchroniser un dépôt par un cloud](https://git-scm.com/docs/gitfaq), [chercher dans les fichiers](https://git-scm.com/docs/git-grep), [les liens dans un fichier Markdown sur GitHub](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax), [les liens d'un wiki GitHub](https://docs.github.com/en/communities/documenting-your-project-with-wikis/editing-wiki-content)
 > 21. **Les sondages par bot.** [Telegram](https://core.telegram.org/bots/api), [Discord](https://docs.discord.com/developers/resources/poll), [WhatsApp](https://developers.facebook.com/documentation/business-messaging/whatsapp/messages/send-messages)
 >
-> **Se tenir à jour** : la veille de la [[fiche-8#La veille|fiche 8]].
+> **Se tenir à jour** : la veille de la [[fiche-7#La veille|fiche 7]].
 >
 > 22. **Organiser sa veille technologique.** Ce qu'est une veille, ses étapes, et comment l'automatiser par des alertes et des flux RSS. [Bibliothèques de l'Université Rennes 2, « Organiser sa veille informationnelle », 04/05/26](https://tutos.bu.univ-rennes2.fr/c.php?g=688574)
 

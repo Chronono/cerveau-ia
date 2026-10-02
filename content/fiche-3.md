@@ -65,7 +65,7 @@ Jusqu'ici, la peur visait l'IA ; la plus utile vise ce que vous pourriez perdre 
 - **Ingénieur**, vous risquez de perdre ce que vous savez : le cas que décrit Bainbridge.
 - **En apprentissage**, de ne jamais l'acquérir. Dans une étude d'Anthropic, 52 développeurs, surtout juniors, découvraient une bibliothèque Python : avec l'IA, 50 % au quiz final, contre 67 % à la main, sans gain de temps significatif ; mais ceux qui s'en servaient pour comprendre (questions de principe, explications avec le code) ont eu de 65 à 86 % (corrélation) [\[8\]](source-08). Ce qui semble coûter, ce n'est pas l'IA, c'est de sauter la compréhension. L'étude n'est pas encore relue par des pairs, ses groupes sont petits et le quiz suivait juste la tâche ; mais c'est votre situation, puisque vous apprenez.
 
-**Comprendre, pas savoir écrire.** Le but n'est pas de savoir écrire chaque ligne à la main, mais de comprendre ce qui est mis en place : pourquoi de l'asynchrone ici, par exemple (le détail par type de contenu : [[fiche-4#Le questionnaire|fiche 4]]). Les parades : tracer la ligne en mode plan, le questionnaire (fiche 4), le point sur ce qui a changé ([[fiche-7#Ce qui a changé|fiche 7]]), la veille ([[fiche-8#La veille|fiche 8]]).
+**Comprendre, pas savoir écrire.** Le but n'est pas de savoir écrire chaque ligne à la main, mais de comprendre ce qui est mis en place : pourquoi de l'asynchrone ici, par exemple (le détail par type de contenu : [[fiche-4#Le questionnaire|fiche 4]]). Les parades : tracer la ligne en mode plan, le questionnaire (fiche 4), le point sur ce qui a changé ([[fiche-7#Ce qui a changé|fiche 7]]), la veille ([[fiche-7#La veille|fiche 7]]).
 
 ## Sources de cette fiche
 
