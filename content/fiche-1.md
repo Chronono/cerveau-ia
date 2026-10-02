@@ -24,7 +24,7 @@ Un chatbot y ajoute une « mémoire », une page de post-it sur vous ; un projet
 | Mémoire | Les notes du projet : but, sources, hypothèses, décisions, vocabulaire | Quand la tâche en a besoin, depuis le sommaire, index.md |
 | Skills | Des procédures écrites une fois (« résoudre un conflit ») | Seulement quand la tâche l'exige |
 
-Anthropic conseille ce montage dans beaucoup de cas : un socle court toujours chargé, le reste cherché à la demande [\[14\]](source-14). D'un skill, l'IA ne voit d'abord que le nom et la description, et ne lit le reste que si elle le juge utile [\[15\]](source-15) ([[fiche-6#Important|fiche 6]]).
+Anthropic conseille ce montage dans beaucoup de cas : un socle court toujours chargé, le reste cherché à la demande [\[14\]](source-14). D'un skill, l'IA ne voit d'abord que le nom et la description, et ne lit le reste que si elle le juge utile [\[15\]](source-15) ([[fiche-6#Un skill, l'exemple, resoudre-conflit|fiche 6]]).
 
 Pour y travailler, il faut un **agent** (Claude Code chez Anthropic, Codex chez OpenAI…) : un modèle autorisé à modifier des fichiers et à lancer des commandes, dont git, l'outil d'historique des fichiers. Un chatbot ne le peut pas.
 
@@ -50,9 +50,11 @@ Pour y travailler, il faut un **agent** (Claude Code chez Anthropic, Codex chez 
 >
 > D'où le principe : **ce qui doit être lu à chaque fois passe par le programme ; ce qui se lit à la demande passe par une phrase.** Le sommaire index.md et les skills se lisent sur une phrase, et c'est voulu : c'est ce qui garde le contexte petit ; rater une note coûte de la qualité, rater les règles coûte un push qui casse le travail des autres. La même logique fait d'un interdit un hook plutôt qu'une règle ([[fiche-7|fiche 7]]).
 >
+> **Même logique pour les skills.** Chaque outil charge seul ses propres dossiers, souvent cachés (`.claude/skills/` pour Claude Code) [\[18\]](source-18), et Obsidian n'affiche pas un dossier dont le nom commence par un point : des skills rangés là, vous ne les verriez plus, et ce que vous ne voyez pas, vous ne le contrôlez pas ([[fiche-2|fiche 2]]). D'où un seul dossier `skills/`, visible, listé dans AGENTS.md avec, pour chaque skill, quand l'ouvrir : tout agent, quel que soit son modèle, l'ouvre sur cette phrase.
+>
 > Un réglage de Claude Code fait aussi lire les deux fichiers, mais il vit sur le poste de chacun, pas dans le dépôt [\[17\]](source-17) : l'import est la seule parade que git transporte. **Même logique pour les autres outils** : leur fichier ne contient qu'un renvoi, ou l'outil est réglé pour lire AGENTS.md ([[fiche-7#Réglages par outil|fiche 7]]).
 >
-> Deux précautions encore : AGENTS.md n'utilise rien de propre à un outil (ni syntaxe d'import, ni nom de commande interne) ; et ce qui doit être retenu va dans le socle, jamais dans la mémoire automatique d'un outil, qui reste sur la machine du membre [\[17\]](source-17). Sur chaque poste, le test de la [[fiche-6#Critique|fiche 6]] prouve que l'IA lit les règles communes.
+> Deux précautions encore : AGENTS.md n'utilise rien de propre à un outil (ni syntaxe d'import, ni nom de commande interne) ; et ce qui doit être retenu va dans le socle, jamais dans la mémoire automatique d'un outil, qui reste sur la machine du membre [\[17\]](source-17). Sur chaque poste, le test de la [[fiche-6#Les gestes, un par un|fiche 6]] prouve que l'IA lit les règles communes.
 
 **Coût et gain.** Le socle coûte au début ; ensuite, chaque note écrite une fois sert à toutes les sessions de l'équipe. Rien n'est automatique pour autant : sur des tâches de code, un fichier de règles généré par l'IA n'améliore pas la réussite d'un agent et le fait coûter 20 % de plus ; écrit par les développeurs, il fait mieux que lui, de peu [\[5\]](source-05). Ce qui marche, ce sont les consignes précises, que l'IA suit ; une description générale du projet ne sert à rien [\[5\]](source-05). Le gain dépend de ce que vous écrivez.
 

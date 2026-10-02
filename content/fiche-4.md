@@ -22,7 +22,7 @@ L'IA ne sait de votre projet que ce qui est écrit dans le socle ; ce qui reste 
 | Ce qui a été essayé et n'a pas marché | l'hypothèse, marquée réfutée | pourquoi elle est tombée, pour que personne ne la repropose comme neuve |
 | Les mots du métier | `glossaire.md` | un mot, une définition : celle de l'équipe |
 
-Ces dossiers sont un point de départ : appropriez-vous-les. Après la séance, quand le contenu le demande, organisez à votre façon : des sous-dossiers, un dossier de plus, un autre nom. Décidez-le ensemble, et faites-le faire par l'IA, qui déplace les notes et tient le sommaire à jour ; un dossier principal qui change de nom change aussi AGENTS.md, par le responsable des règles ([[fiche-6#Critique|fiche 6]]).
+Ces dossiers sont un point de départ : appropriez-vous-les. Après la séance, quand le contenu le demande, organisez à votre façon : des sous-dossiers, un dossier de plus, un autre nom. Décidez-le ensemble, et faites-le faire par l'IA, qui déplace les notes et tient le sommaire à jour ; un dossier principal qui change de nom change aussi AGENTS.md, par le responsable des règles ([[fiche-6#Les gestes, un par un|fiche 6]]).
 
 **Le solide et le supposé.** Solide : ce que dit une source que vous avez ouverte et lue, une mesure, une exigence écrite du client. Tout le reste est supposé, et le dit : un supposé glissé dans `projet.md` ou dans une décision devient une note d'`hypotheses/`, citée par un lien. Une supposition écrite comme un fait, c'est exactement ce que l'IA amplifiera. Dans le doute, c'est supposé.
 
@@ -137,7 +137,7 @@ Quand : avant chaque commit, sauf pour un changement qui se dit en une phrase.
 - **« Repose la question autrement »** : à la même question, on répond de mémoire ; à une autre, on montre qu'on a compris.
 - **« Ne saute le questionnaire que si je te le demande »** : rien ne vous empêche de passer outre, c'est le chemin facile (le mode plan, plus haut) ; mais il faut le demander : ce n'est plus un oubli, c'est un choix.
 
-**Concevez la vôtre.** Une équipe qui écrit surtout du code interrogera sur les principes ; une équipe qui a un client, sur son cahier des charges ; une autre préférera l'explication au questionnaire. Demandez à votre IA : « Voici notre projet et cette règle. Quelles questions nous aideraient vraiment à rester maîtres de ce qui entre dans le socle ? Où cette règle nous gênerait-elle ? » Puis la règle entre dans AGENTS.md comme les autres, par le responsable des règles ([[fiche-6#Critique|fiche 6]]) ; si elle s'allonge, faites-en un skill, appelé par une ligne d'AGENTS.md.
+**Concevez la vôtre.** Une équipe qui écrit surtout du code interrogera sur les principes ; une équipe qui a un client, sur son cahier des charges ; une autre préférera l'explication au questionnaire. Demandez à votre IA : « Voici notre projet et cette règle. Quelles questions nous aideraient vraiment à rester maîtres de ce qui entre dans le socle ? Où cette règle nous gênerait-elle ? » Puis la règle entre dans AGENTS.md comme les autres, par le responsable des règles ([[fiche-6#Les gestes, un par un|fiche 6]]) ; si elle s'allonge, faites-en un skill, appelé par une ligne d'AGENTS.md.
 
 ## Sources de cette fiche
 
